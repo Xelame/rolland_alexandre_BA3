@@ -1,0 +1,6 @@
+<article>
+    @for (article of articles; track article.Name;) {
+        <h1>{{ article.Name }}</h1>
+        <img src="{{ article['Storage Image'] }}" alt="{{ article.Name }}">
+    }
+</article>
