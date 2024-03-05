@@ -1,10 +1,14 @@
-<article>
-    @for (article of articles; track article.Name;) {
-        <h1>{{ article.Name }}</h1>
-        <img src="{{ article['Closet Image'] }}" alt="{{ article.Name }}">
+@for (article of articles; track article.Name;) {
+    <article class="card d-inline-block m-2" style="width: 18rem;">
+        <img src="{{ article['Closet Image'] }}" alt="{{ article.Name }}" class="card-img-top">
+        <h5 class="card-title">{{ article.Name }}</h5>
         <p>Price : {{ article.Buy }}</p>
         <p>Availability : {{ article["Seasonal Availability"] }}</p>
-        <button>Add</button>
-        <button>X</button>
-    }
-</article>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Clochette</span>
+            <input type="number" class="form-control" #inputField aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <button (click)="addToCart(article, +inputField.value)" class="btn btn-primary">Add</button>
+        <button type="button" class="btn-close" aria-label="Close"></button>
+    </article>
+}
