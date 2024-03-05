@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
 import { IArticlePanier } from '../iarticle-panier';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-article-panier',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './article-panier.component.html',
   styleUrl: './article-panier.component.css'
 })

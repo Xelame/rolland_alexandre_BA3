@@ -1,6 +1,6 @@
 <button type="button" (click)="clearCart()" class="btn btn-danger m-2">Clear Cart</button><br>
 @for (article of getCart(); track article.id;) {
-    <article class="card d-inline-block m-2" style="width: 18rem;">
+    <article class="card d-inline-block m-2 p-2" style="width: 18rem;">
         <h5 class="card-title">{{ article.name }}</h5>
         <p>Price : {{ article.price }}</p>
         <div class="input-group mb-3" >
@@ -11,10 +11,11 @@
         <div class="input-group mb-3" >
             <button (click)="addToCart(article, +inputField.value)" class="btn btn-primary">Add</button>
             <input oninput="this.value= Math.max(1, Math.abs(this.value))" type="number" class="form-control" min="1" value="1" #inputField aria-label="Username" aria-describedby="basic-addon1">
+            <button (click)="deleteFromCart(article.id)" class="btn btn-danger" aria-label="Close">X</button>
         </div>
 
-        <button (click)="deleteFromCart(article.id)" class="btn btn-danger mx-2" aria-label="Close">X</button>
     </article>
 }
 
-<p>Total : {{ updateTotal() }}</p>
+<p class="m-2">Total : {{ updateTotal() }}</p>
+<a class="btn btn-success m-2 " routerLink="/checkout" routerLinkActive="active" ariaCurrentWhenActive="page">Checkout</a>

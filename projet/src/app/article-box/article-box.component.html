@@ -9,11 +9,13 @@
         <input oninput="this.value= Math.max(1, Math.abs(this.value))" type="number" class="form-control" min="0"
             value="0" #inputField aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <button (click)="addToCart(article, +inputField.value)" class="btn btn-primary">Add</button>
-    @for (buyed of getCart(); track buyed.id;) {
-    @if (buyed.id === article["Unique Entry ID"]) {
-    <button (click)="deleteFromCart(buyed.id)" class="btn btn-danger mx-2" aria-label="Close">X</button>
-    }
-    }
+    <div class="d-grid gap-2 ">
+        <button (click)="addToCart(article, +inputField.value)" class="btn btn-primary">Add</button>
+        @for (buyed of getCart(); track buyed.id;) {
+        @if (buyed.id === article["Unique Entry ID"]) {
+        <button (click)="deleteFromCart(buyed.id)" class="btn btn-danger mt-2" aria-label="Close">X</button>
+        }
+        }
+    </div>
 </article>
 }
