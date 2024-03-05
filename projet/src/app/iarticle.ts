@@ -13,7 +13,7 @@ export interface IArticle {
     "Miles Price": string
     Source: string
     "Source Notes": string
-    "Seasonal Availibility": string
+    "Seasonal Availability": string
     "Mannequin Peace": string
     Style: string
     "Sort Order": number
