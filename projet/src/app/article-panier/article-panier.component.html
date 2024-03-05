@@ -1,1 +1,20 @@
-<p>article-panier works!</p>
+<button type="button" (click)="clearCart()" class="btn btn-danger m-2">Clear Cart</button><br>
+@for (article of getCart(); track article.id;) {
+    <article class="card d-inline-block m-2" style="width: 18rem;">
+        <h5 class="card-title">{{ article.name }}</h5>
+        <p>Price : {{ article.price }}</p>
+        <div class="input-group mb-3" >
+            <span class="input-group-text" id="basic-addon1">Current Quantity</span>
+            <input type="number" class="form-control" min="1" value="{{article.quantity}}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+        </div>
+
+        <div class="input-group mb-3" >
+            <button (click)="addToCart(article, +inputField.value)" class="btn btn-primary">Add</button>
+            <input oninput="this.value= Math.max(1, Math.abs(this.value))" type="number" class="form-control" min="1" value="1" #inputField aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <button (click)="deleteFromCart(article.id)" class="btn btn-danger mx-2" aria-label="Close">X</button>
+    </article>
+}
+
+<p>Total : {{ updateTotal() }}</p>

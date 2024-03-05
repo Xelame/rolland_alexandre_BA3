@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
+import { ArticleBoxComponent } from './article-box/article-box.component';
+import { ArticlePanierComponent } from './article-panier/article-panier.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, MainComponent, NavComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, ArticleBoxComponent, ArticlePanierComponent, NavComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
