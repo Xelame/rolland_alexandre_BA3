@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EcommerceService } from '../ecommerce.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-form-checkout',
